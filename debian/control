@@ -1,0 +1,65 @@
+Source: haskell-cmark-gfm
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders: Clint Adams <clint@debian.org>
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends: debhelper (>= 10),
+ haskell-devscripts (>= 0.8),
+ cdbs,
+ ghc (>= 8.4.3),
+ ghc-prof,
+ libghc-hunit-dev (>= 1.2),
+ libghc-hunit-dev (<< 1.7),
+ libcmark-gfm-dev (>= 0.29.0.gfm.0-6),
+ libcmark-gfm-extensions-dev (>= 0.29.0.gfm.0-6),
+ pkg-config,
+Build-Depends-Indep: ghc-doc,
+Standards-Version: 4.5.0
+Homepage: https://github.com/kivikakk/cmark-gfm-hs
+X-Description: fast, accurate GitHub Flavored Markdown parser and renderer
+ This package provides Haskell bindings for libcmark-gfm, the reference
+ parser for GitHub Flavored Markdown, a fully specified variant of
+ Markdown.
+
+Package: libghc-cmark-gfm-dev
+Architecture: any
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libcmark-gfm-dev,
+ libcmark-gfm-extensions-dev,
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Conflicts: ${haskell:Conflicts},
+Provides: ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-cmark-gfm-prof
+Architecture: any
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Conflicts: ${haskell:Conflicts},
+Provides: ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-cmark-gfm-doc
+Architecture: all
+Section: doc
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Conflicts: ${haskell:Conflicts},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
